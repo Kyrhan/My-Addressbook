@@ -1,0 +1,60 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('compile') {
+            steps {
+                echo 'Compile stage'
+                git branch: 'main', url: 'https://github.com/victoreze07/payment.git'
+                sh 'mvn compile'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'test stage'
+                sh 'mvn test'
+            }
+        }
+        stage('package') {
+            steps {
+                echo 'Package Stage'
+                sh 'mvn package'
+            }
+        }
+        stage('Aqua-Scan') {
+            steps {
+                echo 'Store the payment.war file in Nexus'
+            }
+        }
+        stage('Publish to Nexus') {
+            steps {
+                echo 'Scan for vurnerbilities'
+            }
+        }
+        stage('Docker Build') {
+            steps {
+                echo 'Docker'
+            }
+        }
+        stage('Push Image to Dockerhub') {
+            steps {
+                echo 'Docker Registry'
+            }
+        }
+        stage('Deploy on Dev Environment') {
+            steps {
+                echo 'Deploy on Development Server'
+            }
+        }
+        stage('Deploy on Pre Prod Environment') {
+            steps {
+                echo 'Deploy on Pre prod Server'
+            }
+        }
+        stage('Deploy on Prod Environment') {
+            steps {
+                echo 'Deploy on prod Servers'
+            }
+        }
+    }
+}
