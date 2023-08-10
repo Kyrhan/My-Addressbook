@@ -5,5 +5,5 @@
 #### copy a file
     - name: copy file
       copy:
-        src: /My-Addressbook/target/addressbook.war
+        src: /target/addressbook.war
         dest: /tmp
