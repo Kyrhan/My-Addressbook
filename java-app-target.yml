@@ -5,5 +5,5 @@
 #### copy a file
     - name: copy file
       copy:
-        src: cd /var/lib/jenkins/workspace/ansible-jenkins/target/addressbook.war
+        src: /var/lib/jenkins/workspace/ansible-jenkins/target/addressbook.war
         dest: /tmp
