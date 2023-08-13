@@ -44,11 +44,5 @@ pipeline {
                 sh 'docker push victoreze07/myaddressbook:${BUILD_NUMBER} '
             }
         }
-        stage('Ansible deploy') {
-            steps {
-                echo 'Copy Artifact to Servers'
-                sh 'echo 'today@1234' | su -c 'ansible-playbook java-app-target.yml' devops'
-            }
-        }
     }
 }
