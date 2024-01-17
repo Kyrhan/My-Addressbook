@@ -35,7 +35,7 @@ pipeline {
         stage('docker login') {
             steps {
                 echo 'Login to Dockerhub'
-                sh 'docker login -u victoreze07 -p Incredible@1'
+                sh 'docker login -u victoreze07 -p Password@1'
             }
         } 
         stage('docker push') {
